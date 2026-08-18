@@ -1,8 +1,8 @@
 export const promoText = 'SPECIAL PROMO!!! GRATIS ONGKIR SELURUH DAERAH JABODETABEK !!!!';
 
 export const storeInfo = {
-  name: 'Apotek Nabilah Farma',
-  tagline: 'Toko Obat Nabilah Farma',
+  name: 'Apotek Pantek',
+  tagline: 'Apotek Pantek',
   description: 'Kami menjual obat, obat injeksi dan keperluan medis lainnya',
   whatsapp: '6281382329729',
   phone: '0813-8232-9729',

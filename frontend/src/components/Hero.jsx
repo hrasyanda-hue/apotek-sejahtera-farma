@@ -55,7 +55,7 @@ export default function Hero({ onSearch }) {
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-to-br from-emerald-200/50 to-cyan-200/40 blur-2xl rounded-3xl"/>
             <img
-              alt="Nabilah Farma"
+              alt="Apotek Pantek"
               className="relative rounded-2xl shadow-xl w-full h-72 md:h-96 object-cover"
               src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=900&auto=format&fit=crop&q=60"
             />

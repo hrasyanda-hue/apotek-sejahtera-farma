@@ -16,10 +16,10 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         <a href="#home" className="flex items-center gap-2">
           <div className="w-11 h-11 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center text-white font-bold text-lg shadow-md">
-            NF
+            AP
           </div>
           <div>
-            <div className="text-emerald-700 font-bold text-lg leading-tight">Nabilah Farma</div>
+            <div className="text-emerald-700 font-bold text-lg leading-tight">Apotek Pantek</div>
             <div className="text-xs text-slate-500">Toko Obat & Injeksi</div>
           </div>
         </a>

@@ -10,7 +10,7 @@ export default function ProductCard({ product }) {
   const discount = Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100);
 
   const order = () => {
-    const msg = encodeURIComponent(`Halo Apotek Nabilah Farma, saya mau order: ${product.name}`);
+    const msg = encodeURIComponent(`Halo Apotek Pantek, saya mau order: ${product.name}`);
     window.open(`https://wa.me/${storeInfo.whatsapp}?text=${msg}`, '_blank');
   };
 
