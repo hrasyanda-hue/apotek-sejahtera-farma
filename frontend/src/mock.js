@@ -1,8 +1,8 @@
 export const promoText = 'SPECIAL PROMO!!! GRATIS ONGKIR SELURUH DAERAH JABODETABEK !!!!';
 
 export const storeInfo = {
-  name: 'Apotek Pantek',
-  tagline: 'Apotek Pantek',
+  name: 'Apotek Mediva',
+  tagline: 'Apotek Mediva',
   description: 'Kami menjual obat, obat injeksi dan keperluan medis lainnya',
   whatsapp: '6285280398887',
   phone: '0852-8039-8887',

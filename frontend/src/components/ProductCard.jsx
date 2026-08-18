@@ -13,7 +13,7 @@ export default function ProductCard({ product }) {
 
   const order = (e) => {
     e.stopPropagation();
-    const msg = encodeURIComponent(`Halo Apotek Pantek, saya mau order: ${product.name}`);
+    const msg = encodeURIComponent(`Halo Apotek Mediva, saya mau order: ${product.name}`);
     window.open(`https://wa.me/${storeInfo.whatsapp}?text=${msg}`, '_blank');
   };
 

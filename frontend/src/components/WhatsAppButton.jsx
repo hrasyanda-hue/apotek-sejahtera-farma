@@ -3,7 +3,7 @@ import { MessageCircle } from 'lucide-react';
 import { storeInfo } from '../mock';
 
 export default function WhatsAppButton() {
-  const href = `https://wa.me/${storeInfo.whatsapp}?text=Halo%20Apotek%20Pantek%20saya%20mau%20order%20obat...`;
+  const href = `https://wa.me/${storeInfo.whatsapp}?text=Halo%20Apotek%20Mediva%20saya%20mau%20order%20obat...`;
   return (
     <a href={href} target="_blank" rel="noopener noreferrer"
       className="fixed bottom-5 right-5 z-50 group">

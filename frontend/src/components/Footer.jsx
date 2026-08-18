@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="flex items-center gap-2 mb-3">
             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center text-white font-bold">AP</div>
             <div>
-              <div className="font-bold text-white">Apotek Pantek</div>
+              <div className="font-bold text-white">Apotek Mediva</div>
               <div className="text-xs text-slate-400">Toko Obat & Injeksi</div>
             </div>
           </div>
@@ -49,7 +49,7 @@ export default function Footer() {
       </div>
       <div className="border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-4 py-4 text-center text-xs text-slate-500">
-          @{year} Apotek Pantek Inc.
+          @{year} Apotek Mediva Inc.
         </div>
       </div>
     </footer>

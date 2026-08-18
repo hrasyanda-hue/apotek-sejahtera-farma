@@ -19,7 +19,7 @@ export default function Header() {
             AP
           </div>
           <div>
-            <div className="text-emerald-700 font-bold text-lg leading-tight">Apotek Pantek</div>
+            <div className="text-emerald-700 font-bold text-lg leading-tight">Apotek Mediva</div>
             <div className="text-xs text-slate-500">Toko Obat & Injeksi</div>
           </div>
         </a>
