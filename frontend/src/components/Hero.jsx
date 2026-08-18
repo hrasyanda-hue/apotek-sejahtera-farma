@@ -53,7 +53,12 @@ export default function Hero({ onSearch }) {
             </div>
           </div>
           <div className="relative min-h-72 md:min-h-96 hidden md:block">
-            <div className="absolute inset-0 bg-gradient-to-br from-emerald-100 to-cyan-100 rounded-2xl border border-emerald-200/60"/>
+            <div className="absolute -inset-4 bg-gradient-to-br from-emerald-200/40 to-cyan-200/30 blur-2xl rounded-3xl"/>
+            <img
+              src="https://customer-assets-v7afamib.emergentagent.net/job_wellness-center-87/artifacts/1taw0med_ChatGPT%20Image%2018%20Agu%202026%2C%2021.26.18.png"
+              alt="Apotek Mediva - Obat Tepat, Hidup Sehat"
+              className="relative w-full h-full object-contain rounded-2xl bg-white p-4 shadow-xl border border-emerald-100"
+            />
             <div className="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-lg px-4 py-3 flex items-center gap-3 border border-emerald-100">
               <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center">
                 <ShieldCheck className="text-emerald-600" size={20}/>
