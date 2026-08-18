@@ -21,7 +21,7 @@ export default function Header() {
             className="w-12 h-12 rounded-full object-contain bg-white ring-1 ring-slate-200 shadow-sm"
           />
           <div>
-            <div className="text-blue-800 font-bold text-lg leading-tight">Apotek Mediva</div>
+            <div className="text-slate-900 font-bold text-lg leading-tight">Apotek Mediva</div>
             <div className="text-xs text-slate-500">Medical Pharmacy</div>
           </div>
         </a>
