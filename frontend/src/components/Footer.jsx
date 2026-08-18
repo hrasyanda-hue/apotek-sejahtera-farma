@@ -1,12 +1,12 @@
 import React from 'react';
-import { Phone, Mail, MapPin, Facebook, Instagram } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 import { storeInfo } from '../mock';
 
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="bg-slate-900 text-slate-300">
-      <div className="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-3 gap-8">
         <div>
           <div className="flex items-center gap-2 mb-3">
             <img src={storeInfo.logo} alt="Apotek Mediva" className="w-10 h-10 rounded-full object-contain bg-white"/>
@@ -21,17 +21,9 @@ export default function Footer() {
           <h4 className="text-white font-bold mb-3">Links</h4>
           <ul className="space-y-2 text-sm">
             <li><a href="#home" className="hover:text-emerald-400 transition-colors">Home</a></li>
-            <li><a href="#blog" className="hover:text-emerald-400 transition-colors">Blog</a></li>
             <li><a href="#products" className="hover:text-emerald-400 transition-colors">Daftar Produk</a></li>
             <li><a href="#confirm" className="hover:text-emerald-400 transition-colors">Konfirmasi Pembayaran</a></li>
           </ul>
-        </div>
-        <div>
-          <h4 className="text-white font-bold mb-3">Social Media</h4>
-          <div className="flex items-center gap-2">
-            <a href="#" className="w-9 h-9 rounded-full bg-slate-800 hover:bg-emerald-600 flex items-center justify-center transition-colors"><Facebook size={16}/></a>
-            <a href="#" className="w-9 h-9 rounded-full bg-slate-800 hover:bg-emerald-600 flex items-center justify-center transition-colors"><Instagram size={16}/></a>
-          </div>
           <h4 className="text-white font-bold mt-5 mb-3">Metode Pengiriman</h4>
           <div className="flex items-center gap-3 bg-white/95 rounded-md p-2 w-fit">
             <img src="https://brdsg.com/logo/id/jne.svg" alt="JNE" className="h-6"/>

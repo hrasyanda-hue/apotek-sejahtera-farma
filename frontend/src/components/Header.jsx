@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { Menu, X, Home, FileText, Package, CreditCard, Phone, Mail } from 'lucide-react';
+import { Menu, X, Home, Package, CreditCard, Phone, Mail } from 'lucide-react';
 import { storeInfo } from '../mock';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const links = [
     { name: 'Home', icon: Home, href: '#home' },
-    { name: 'Blog', icon: FileText, href: '#blog' },
     { name: 'Daftar Produk', icon: Package, href: '#products' },
     { name: 'Konfirmasi Pembayaran', icon: CreditCard, href: '#confirm' },
   ];
