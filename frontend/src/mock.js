@@ -8,7 +8,7 @@ export const storeInfo = {
   phone: '0852-8039-8887',
   email: 'rukoinjeksi@gmail.com',
   address: 'Jln Pramuka Raya Matraman Jakarta Timur',
-  logo: 'https://customer-assets-v7afamib.emergentagent.net/job_wellness-center-87/artifacts/5rzk84so_image.png',
+  logo: 'https://customer-assets-v7afamib.emergentagent.net/job_wellness-center-87/artifacts/p33zyfsy_image.png',
   bank: {
     name: 'BCA',
     logo: 'https://brdsg.com/logo/id/bca.svg',
