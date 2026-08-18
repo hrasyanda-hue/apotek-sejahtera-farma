@@ -11,6 +11,7 @@ import ShippingCalculator from "./components/ShippingCalculator";
 import StoreAddress from "./components/StoreAddress";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
+import Testimonials from "./components/Testimonials";
 import { promoText, injeksiProducts, insulinProducts, asmaProducts } from "./mock";
 
 const Home = () => {
@@ -51,6 +52,7 @@ const Home = () => {
         <PaymentInfo />
       </div>
       <ShippingCalculator />
+      <Testimonials />
       <StoreAddress />
       <Footer />
       <WhatsAppButton />

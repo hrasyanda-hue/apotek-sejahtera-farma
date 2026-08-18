@@ -1,14 +1,18 @@
 import React from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from './ui/dialog';
 import { Button } from './ui/button';
-import { ShoppingBag, ShieldCheck, Package, Tag } from 'lucide-react';
+import { ShoppingBag, ShieldCheck, Package, Tag, MessageSquare } from 'lucide-react';
 import { storeInfo } from '../mock';
+import { getReviews } from '../reviews';
+import StarRating from './StarRating';
 
 const formatRp = (n) => 'Rp ' + n.toLocaleString('id-ID');
 
 export default function ProductDetailDialog({ product, open, onOpenChange }) {
   if (!product) return null;
   const discount = Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100);
+  const reviews = getReviews(product.id);
+  const avgRating = reviews.reduce((s, r) => s + r.rating, 0) / reviews.length;
 
   const order = () => {
     const msg = encodeURIComponent(`Halo Apotek Mediva, saya mau order: ${product.name}`);
@@ -17,7 +21,7 @@ export default function ProductDetailDialog({ product, open, onOpenChange }) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-lg text-slate-900 pr-8">{product.name}</DialogTitle>
           <DialogDescription className="sr-only">Detail produk</DialogDescription>
@@ -35,6 +39,11 @@ export default function ProductDetailDialog({ product, open, onOpenChange }) {
             <div className="flex items-center gap-2 mb-2">
               <Tag size={14} className="text-emerald-600"/>
               <span className="text-xs text-emerald-700 font-semibold uppercase tracking-wider">Obat Original</span>
+            </div>
+            <div className="flex items-center gap-2 mb-2">
+              <StarRating rating={avgRating} size={16}/>
+              <span className="text-sm font-semibold text-slate-800">{avgRating.toFixed(1)}</span>
+              <span className="text-xs text-slate-500">({reviews.length} ulasan)</span>
             </div>
             <div className="flex items-baseline gap-3 mb-4">
               <span className="text-sm text-slate-400 line-through">{formatRp(product.oldPrice)}</span>
@@ -60,6 +69,33 @@ export default function ProductDetailDialog({ product, open, onOpenChange }) {
             <p className="text-xs text-slate-500 mt-2 text-center">
               *Obat resep hanya dilayani dengan resep dokter yang sah
             </p>
+          </div>
+        </div>
+
+        {/* Reviews Section */}
+        <div className="mt-6 pt-5 border-t border-slate-200">
+          <div className="flex items-center gap-2 mb-4">
+            <MessageSquare size={18} className="text-emerald-600"/>
+            <h4 className="font-bold text-slate-900">Ulasan Pelanggan ({reviews.length})</h4>
+          </div>
+          <div className="space-y-3">
+            {reviews.map((r, i) => (
+              <div key={i} className="bg-slate-50 rounded-lg p-4 border border-slate-100">
+                <div className="flex items-start justify-between gap-3 mb-1.5">
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-bold text-xs flex items-center justify-center">
+                      {r.name.charAt(0)}
+                    </div>
+                    <div>
+                      <div className="text-sm font-semibold text-slate-900">{r.name}</div>
+                      <div className="text-xs text-slate-500">{r.date}</div>
+                    </div>
+                  </div>
+                  <StarRating rating={r.rating} size={12}/>
+                </div>
+                <p className="text-sm text-slate-600 leading-relaxed">{r.comment}</p>
+              </div>
+            ))}
           </div>
         </div>
       </DialogContent>

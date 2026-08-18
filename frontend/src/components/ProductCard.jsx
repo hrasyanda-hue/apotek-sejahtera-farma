@@ -3,6 +3,8 @@ import { Share2, ShoppingBag, Info } from 'lucide-react';
 import { Button } from './ui/button';
 import { toast } from '../hooks/use-toast';
 import { storeInfo } from '../mock';
+import { getReviews } from '../reviews';
+import StarRating from './StarRating';
 import ProductDetailDialog from './ProductDetailDialog';
 
 const formatRp = (n) => 'Rp ' + n.toLocaleString('id-ID');
@@ -10,6 +12,8 @@ const formatRp = (n) => 'Rp ' + n.toLocaleString('id-ID');
 export default function ProductCard({ product }) {
   const [open, setOpen] = useState(false);
   const discount = Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100);
+  const reviews = getReviews(product.id);
+  const avgRating = reviews.reduce((s, r) => s + r.rating, 0) / reviews.length;
 
   const order = (e) => {
     e.stopPropagation();
@@ -58,6 +62,10 @@ export default function ProductCard({ product }) {
           <h3 className="text-sm text-slate-700 font-semibold line-clamp-2 min-h-[2.4rem] group-hover:text-emerald-700 transition-colors">
             {product.name}
           </h3>
+          <div className="flex items-center gap-1.5 mt-1">
+            <StarRating rating={avgRating} size={12}/>
+            <span className="text-xs text-slate-500">({reviews.length})</span>
+          </div>
           <p className="text-xs text-slate-500 line-clamp-2 mt-1 min-h-[2rem] leading-relaxed">
             {product.description}
           </p>
