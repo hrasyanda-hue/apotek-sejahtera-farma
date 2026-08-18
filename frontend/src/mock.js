@@ -4,8 +4,8 @@ export const storeInfo = {
   name: 'Apotek Pantek',
   tagline: 'Apotek Pantek',
   description: 'Kami menjual obat, obat injeksi dan keperluan medis lainnya',
-  whatsapp: '6281382329729',
-  phone: '0813-8232-9729',
+  whatsapp: '6283851337660',
+  phone: '0838-5133-7660',
   email: 'rukoinjeksi@gmail.com',
   address: 'Jln Pramuka Raya Matraman Jakarta Timur',
   bank: {
