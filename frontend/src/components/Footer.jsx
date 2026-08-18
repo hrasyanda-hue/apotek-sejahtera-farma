@@ -9,10 +9,10 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-4 gap-8">
         <div>
           <div className="flex items-center gap-2 mb-3">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center text-white font-bold">AP</div>
+            <img src={storeInfo.logo} alt="Apotek Mediva" className="w-10 h-10 rounded-full object-contain bg-white"/>
             <div>
               <div className="font-bold text-white">Apotek Mediva</div>
-              <div className="text-xs text-slate-400">Toko Obat & Injeksi</div>
+              <div className="text-xs text-slate-400">Medical Pharmacy</div>
             </div>
           </div>
           <p className="text-sm text-slate-400">Kami menjual obat, obat injeksi dan keperluan medis lainnya. Dikirim ke seluruh Indonesia.</p>

@@ -15,12 +15,14 @@ export default function Header() {
     <header className="sticky top-0 z-40 bg-white shadow-sm border-b border-emerald-100">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         <a href="#home" className="flex items-center gap-2">
-          <div className="w-11 h-11 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center text-white font-bold text-lg shadow-md">
-            AP
-          </div>
+          <img
+            src={storeInfo.logo}
+            alt="Apotek Mediva"
+            className="w-12 h-12 rounded-full object-contain bg-white ring-1 ring-slate-200 shadow-sm"
+          />
           <div>
-            <div className="text-emerald-700 font-bold text-lg leading-tight">Apotek Mediva</div>
-            <div className="text-xs text-slate-500">Toko Obat & Injeksi</div>
+            <div className="text-blue-800 font-bold text-lg leading-tight">Apotek Mediva</div>
+            <div className="text-xs text-slate-500">Medical Pharmacy</div>
           </div>
         </a>
         <nav className="hidden md:flex items-center gap-6">
