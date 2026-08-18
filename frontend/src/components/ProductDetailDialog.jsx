@@ -2,16 +2,17 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from './ui/dialog';
 import { Button } from './ui/button';
 import { ShoppingBag, ShieldCheck, Package, Tag, MessageSquare, PencilLine, BadgeCheck } from 'lucide-react';
-import { storeInfo } from '../mock';
 import { getReviews } from '../reviews';
 import { getUserReviews } from '../userReviews';
 import StarRating from './StarRating';
 import WriteReviewDialog from './WriteReviewDialog';
+import CheckoutDialog from './CheckoutDialog';
 
 const formatRp = (n) => 'Rp ' + n.toLocaleString('id-ID');
 
 export default function ProductDetailDialog({ product, open, onOpenChange }) {
   const [writeOpen, setWriteOpen] = useState(false);
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
   const [refreshKey, setRefreshKey] = useState(0);
   const [lightbox, setLightbox] = useState(null);
 
@@ -33,8 +34,7 @@ export default function ProductDetailDialog({ product, open, onOpenChange }) {
   const discount = Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100);
 
   const order = () => {
-    const msg = encodeURIComponent(`Halo Apotek Mediva, saya mau order: ${product.name}`);
-    window.open(`https://wa.me/${storeInfo.whatsapp}?text=${msg}`, '_blank');
+    setCheckoutOpen(true);
   };
 
   return (
@@ -83,7 +83,7 @@ export default function ProductDetailDialog({ product, open, onOpenChange }) {
                 </div>
               </div>
               <Button onClick={order} className="w-full bg-emerald-600 hover:bg-emerald-700 text-white gap-2 mt-auto">
-                <ShoppingBag size={16}/> Pesan Sekarang via WhatsApp
+                <ShoppingBag size={16}/> Pesan Sekarang
               </Button>
               <p className="text-xs text-slate-500 mt-2 text-center">
                 *Obat resep hanya dilayani dengan resep dokter yang sah
@@ -155,6 +155,7 @@ export default function ProductDetailDialog({ product, open, onOpenChange }) {
         onOpenChange={setWriteOpen}
         onSubmitted={() => setRefreshKey((k) => k + 1)}
       />
+      <CheckoutDialog product={product} open={checkoutOpen} onOpenChange={setCheckoutOpen}/>
 
       {/* Simple lightbox for review photos */}
       {lightbox && (

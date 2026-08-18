@@ -2,25 +2,25 @@ import React, { useState } from 'react';
 import { Share2, ShoppingBag, Info } from 'lucide-react';
 import { Button } from './ui/button';
 import { toast } from '../hooks/use-toast';
-import { storeInfo } from '../mock';
 import { getReviews } from '../reviews';
 import { getUserReviews } from '../userReviews';
 import StarRating from './StarRating';
 import ProductDetailDialog from './ProductDetailDialog';
+import CheckoutDialog from './CheckoutDialog';
 
 const formatRp = (n) => 'Rp ' + n.toLocaleString('id-ID');
 
 export default function ProductCard({ product }) {
   const [open, setOpen] = useState(false);
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
   const discount = Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100);
   const mockReviews = getReviews(product.id);
-  const reviews = open ? [...getUserReviews(product.id), ...mockReviews] : [...getUserReviews(product.id), ...mockReviews];
+  const reviews = [...getUserReviews(product.id), ...mockReviews];
   const avgRating = reviews.reduce((s, r) => s + r.rating, 0) / (reviews.length || 1);
 
   const order = (e) => {
     e.stopPropagation();
-    const msg = encodeURIComponent(`Halo Apotek Mediva, saya mau order: ${product.name}`);
-    window.open(`https://wa.me/${storeInfo.whatsapp}?text=${msg}`, '_blank');
+    setCheckoutOpen(true);
   };
 
   const share = async (e) => {
@@ -82,6 +82,7 @@ export default function ProductCard({ product }) {
         </div>
       </div>
       <ProductDetailDialog product={product} open={open} onOpenChange={setOpen}/>
+      <CheckoutDialog product={product} open={checkoutOpen} onOpenChange={setCheckoutOpen}/>
     </>
   );
 }
