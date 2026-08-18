@@ -52,13 +52,8 @@ export default function Hero({ onSearch }) {
               </div>
             </div>
           </div>
-          <div className="relative">
-            <div className="absolute -inset-4 bg-gradient-to-br from-emerald-200/50 to-cyan-200/40 blur-2xl rounded-3xl"/>
-            <img
-              alt="Apotek Pantek"
-              className="relative rounded-2xl shadow-xl w-full h-72 md:h-96 object-cover"
-              src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=900&auto=format&fit=crop&q=60"
-            />
+          <div className="relative min-h-72 md:min-h-96 hidden md:block">
+            <div className="absolute inset-0 bg-gradient-to-br from-emerald-100 to-cyan-100 rounded-2xl border border-emerald-200/60"/>
             <div className="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-lg px-4 py-3 flex items-center gap-3 border border-emerald-100">
               <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center">
                 <ShieldCheck className="text-emerald-600" size={20}/>
