@@ -4,6 +4,7 @@ import { Button } from './ui/button';
 import { toast } from '../hooks/use-toast';
 import { storeInfo } from '../mock';
 import { getReviews } from '../reviews';
+import { getUserReviews } from '../userReviews';
 import StarRating from './StarRating';
 import ProductDetailDialog from './ProductDetailDialog';
 
@@ -12,8 +13,9 @@ const formatRp = (n) => 'Rp ' + n.toLocaleString('id-ID');
 export default function ProductCard({ product }) {
   const [open, setOpen] = useState(false);
   const discount = Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100);
-  const reviews = getReviews(product.id);
-  const avgRating = reviews.reduce((s, r) => s + r.rating, 0) / reviews.length;
+  const mockReviews = getReviews(product.id);
+  const reviews = open ? [...getUserReviews(product.id), ...mockReviews] : [...getUserReviews(product.id), ...mockReviews];
+  const avgRating = reviews.reduce((s, r) => s + r.rating, 0) / (reviews.length || 1);
 
   const order = (e) => {
     e.stopPropagation();
